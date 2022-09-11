@@ -94,8 +94,6 @@ class SpeechController extends Controller
         $speech->president_name = $request->president_name;
         $speech->head_teacher_designation = $request->head_teacher_designation;
         $speech->president_designation = $request->president_designation;
-        $speech->head_teacher_institute = $request->head_teacher_institute;
-        $speech->president_institute = $request->president_institute;
         if($request->hasFile('president_image')){
             $speech->president_image = $request->president_image->store('upload','public');
         }

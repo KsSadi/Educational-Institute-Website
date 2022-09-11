@@ -87,41 +87,22 @@ class GlobalSettingController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'full_name' =>  'required|max:50',
+            'full_name' =>  'required|max:100',
+            'short_name' =>  'required|max:20',
 
         ]);
         $global= GlobalSetting::find($id);
         $global->full_name = $request->full_name;
+        $global->bn_name = $request->bn_name;
         $global->short_name = $request->short_name;
         $global->email = $request->email;
         $global->phone = $request->phone;
-        $global->footer_text = $request->footer_text;
         $global->address = $request->address;
         $global->facebook = $request->facebook;
         $global->youtube = $request->youtube;
         $global->twitter = $request->twitter;
         $global->theme = $request->theme;
 
-//        if($request->logo){
-//            $global->logo = $global->logo;
-//        }
-//        if(is_null($request->icon)){
-//            $global->icon = $global->icon;
-//        }
-//    if($request->hasFile('logo')){
-//            $file = $request->file('logo');
-//            @unlink(public_path('uploads/logo/'.$global->logo));
-//            $filename = date('YmdHi').$file->getClientOriginalName();
-//            $file->move(public_path('uploads/logo'), $filename);
-//            $global['logo'] = $filename;
-//        }
-//        if($request->hasFile('icon')){
-//            $file = $request->file('icon');
-//            @unlink(public_path('uploads/logo/'.$global->icon));
-//            $filename = date('YmdHi').$file->getClientOriginalName();
-//            $file->move(public_path('uploads/logo'), $filename);
-//            $global['icon'] = $filename;
-//        }
 
         if($request->hasFile('icon')){
             $global->icon = $request->icon->store('upload','public');

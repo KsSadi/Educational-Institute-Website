@@ -25,6 +25,12 @@
                             <input type="text" class="form-control" name="full_name" value="{{ $global->full_name }}">
                         </div>
                     </div>
+                    <div class="mb-1 row">
+                        <label class="col-sm-2 col-form-label" style="font-size: medium">প্রতিষ্ঠানের পুরো নাম</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="full_name" value="{{ $global->bn_name }}">
+                        </div>
+                    </div>
 
                     <div class="mb-1 row">
                         <label class="col-sm-2 col-form-label" style="font-size: medium">Institute Short Name</label>
@@ -43,12 +49,6 @@
                         <label class="col-sm-2 col-form-label" style="font-size: medium">Phone</label>
                         <div class="col-sm-10">
                             <input type="number" class="form-control"name="phone" value="{{ $global->phone }}" >
-                        </div>
-                    </div>
-                    <div class="mb-1 row">
-                        <label class="col-sm-2 col-form-label" style="font-size: medium">Footer Text</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control"name="footer_text" value="{{ $global->footer_text }}" >
                         </div>
                     </div>
                     <div class="mb-1 row">

@@ -21,8 +21,9 @@
                         </ul> <br>
 
                         <ul>
-                            <li class=""><a href="#">ইংরেজি </a></li> |
-                            &nbsp;  <li class=""><a href="#"> বাংলা  </a></li>
+                            <a href="" style="padding: 5px">
+                                <button class="btn btn-info btn-sm"><strong style="font-size: medium">Online Admission</strong></button>
+                            </a>
                         </ul>
                     </div>
 
@@ -34,8 +35,9 @@
 
                 <div class="en_bn_in_mobile d-sm-none">
                     <div class="">
-                        <a href="#">ইংরেজি </a> |
-                        <a href="#"> বাংলা  </a>
+                        <a href="">
+                            <button class="btn btn-info btn-sm"><strong style="font-size: medium">Online Admission</strong></button>
+                        </a>
                     </div>
                 </div>
 

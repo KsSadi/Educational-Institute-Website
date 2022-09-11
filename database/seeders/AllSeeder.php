@@ -45,7 +45,6 @@ class AllSeeder extends Seeder
            'phone' => '01700000000',
            'icon' => 'upload/XEMwtJaRWP6JHCvxWK2MxjQ77zHltq1JN7mXKeyd.png',
            'logo' => 'upload/HVL5wl3Zptc3qcSExoPrjKmoSlL3AVlcOSgCZIRS.png',
-           'footer_text' => '©2022 Name. All Rights Reserved.',
        ]);
 
        Speech::create([
@@ -53,8 +52,6 @@ class AllSeeder extends Seeder
            'president_name' => 'Mazharul Haque',
            'head_teacher_designation' => 'Chairman',
            'president_designation' => 'President',
-           'head_teacher_institute' => 'Demo Name',
-           'president_institute' => 'Demo Name',
            'head_teacher_image' => 'upload/FxEx10bPAwaRdfc1eNBfjxnuC0ELWT5yz5Yv7PVB.jpg',
            'president_image' => 'upload/pnSJZKecNfiNHH4A6MPQRGdhqmJImzRNty2HIg88.png',
            'head_teacher_massage' => 'Demo Name',
@@ -64,7 +61,6 @@ class AllSeeder extends Seeder
            'title' => 'Demo Notice',
            'notice_file' => 'notice/cqfcPQvvll1HngbpgC8akjA5bV9WCgGw4aXOv4PN.pdf',
            'description' => 'Demo Notice',
-
            'date' => '2022-09-16',
        ]);
         Notice::create([

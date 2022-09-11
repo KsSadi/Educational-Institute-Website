@@ -36,13 +36,6 @@
                             <input type="text" class="form-control" name="head_teacher_designation" value="{{ $speech->head_teacher_designation }}" required>
                         </div>
                     </div>
-
-                    <div class="mb-1 row">
-                        <label class="col-sm-2 col-form-label" style="font-size: medium">Institute</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control"  name="head_teacher_institute" value="{{ $speech->head_teacher_institute }}">
-                        </div>
-                    </div>
                     <div class="mb-1 row">
                         <label class="col-sm-2 col-form-label" style="font-size: medium">Messege</label>
                         <div class="col-sm-10">
@@ -106,12 +99,7 @@
                         </div>
                     </div>
 
-                    <div class="mb-1 row">
-                        <label class="col-sm-2 col-form-label" style="font-size: medium">Institute</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control"  name="president_institute" value="{{ $speech->president_institute }}">
-                        </div>
-                    </div>
+
                     <div class="mb-1 row">
                         <label class="col-sm-2 col-form-label" style="font-size: medium">Messege</label>
                         <div class="col-sm-10">

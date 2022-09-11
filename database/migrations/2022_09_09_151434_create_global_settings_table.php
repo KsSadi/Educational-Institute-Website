@@ -20,7 +20,6 @@ class CreateGlobalSettingsTable extends Migration
             $table->string('short_name')->nullable();
             $table->string('email')->nullable()->default('demo@gmail.com');
             $table->string('phone')->nullable()->default('01700000000');
-            $table->string('footer_text')->nullable()->default('©2022 Name. All Rights Reserved.');
             $table->string('address')->nullable()->default('Dhaka,Bangladesh');
             $table->string('logo')->nullable()->default('');
             $table->string('icon')->nullable()->default('');
