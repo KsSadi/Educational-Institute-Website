@@ -35,7 +35,8 @@ class RolesController extends Controller
         }
         //
         $roles = Role::all();
-        return view('backend.pages.roles.index', compact('roles'));
+        $permissions = Permission::all();
+        return view('backend.pages.roles.index', compact('roles', 'permissions'));
     }
 
     /**
@@ -183,7 +184,7 @@ class RolesController extends Controller
             abort(403, 'Unauthorized Access!');
         }
         //
-        $role = Role::findById($id);
+        $role = Role::find($id);
         if (!is_null($role)) {
             $role->delete();
         }

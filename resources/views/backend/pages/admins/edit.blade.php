@@ -9,7 +9,7 @@
 @include('backend.layouts.partials.alerts')
 <div class="card">
     <div class="card-header">
-        <h4 class="card-title">Edit Admin </h4>
+        <h4 class="card-title">Edit User </h4>
 
     </div>
     <p><hr/></p>
@@ -20,14 +20,14 @@
             @csrf
             <div class="row">
                 <div class="mb-1 row">
-                    <label class="col-sm-2 col-form-label" style="font-size: medium">Admin Name</label>
+                    <label class="col-sm-2 col-form-label" style="font-size: medium">Name</label>
                     <div class="col-sm-10">
                     <input type="text" class="form-control" placeholder="Niamul Hasan" name="name" value=" {{ $admin->name }}">
                 </div>
                 </div>
 
                 <div class="mb-1 row">
-                    <label class="col-sm-2 col-form-label" style="font-size: medium">Admin Username</label>
+                    <label class="col-sm-2 col-form-label" style="font-size: medium">Username</label>
                     <div class="col-sm-10">
                     <input type="text" class="form-control" placeholder="niamul_hasan" name="username" value="{{ $admin->username }}" required>
                 </div>
@@ -39,6 +39,12 @@
                     <input type="email" class="form-control" placeholder="username@gmail.com" name="email" value="{{ $admin->email }}">
                 </div>
                 </div>
+                <div class="mb-1 row">
+                    <label class="col-sm-2 col-form-label" style="font-size: medium">Phone</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control"name="phone" value="{{ $admin->phone }}" >
+                    </div>
+                </div>
 
                 <div class="mb-1 row">
                     <label class="col-sm-2 col-form-label" style="font-size: medium">Password</label>
@@ -48,7 +54,7 @@
                 </div>
 
                 <div class="mb-1 row">
-                    <label class="col-sm-2 col-form-label" style="font-size: medium">Password</label>
+                    <label class="col-sm-2 col-form-label" style="font-size: medium">Confirm Password</label>
                     <div class="col-sm-10">
                     <input type="password" class="form-control" placeholder="Confirm Password" name="password_confirmation">
                 </div>

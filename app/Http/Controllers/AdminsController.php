@@ -78,6 +78,7 @@ class AdminsController extends Controller
         $admin = new Admin();
         $admin->name = $request->name;
         $admin->email = $request->email;
+        $admin->phone = $request->phone;
         $admin->username = $request->username;
         $admin->password = Hash::make($request->password);
         $admin->save();
@@ -85,7 +86,7 @@ class AdminsController extends Controller
         if (!empty($request->roles)) {
             $admin->assignRole($request->roles);
         }
-        session()->flash('success', 'Admin has been Created!!');
+        session()->flash('success', 'User has been Created!!');
         return back();
     }
 
@@ -143,6 +144,7 @@ class AdminsController extends Controller
 
         $admin->name = $request->name;
         $admin->email = $request->email;
+        $admin->phone = $request->phone;
         $admin->username = $request->username;
         if (is_null($admin->password)) {
             $admin->password = Hash::make($request->password);
@@ -153,7 +155,7 @@ class AdminsController extends Controller
         if ($request->roles) {
             $admin->assignRole($request->roles);
         }
-        session()->flash('success', 'Admin has been Updated!');
+        session()->flash('success', 'User has been Updated!');
         return back();
     }
 

@@ -9,7 +9,7 @@
 @include('backend.layouts.partials.alerts')
 <div class="card">
     <div class="card-header">
-        <h4 class="card-title">Edit Role </h4>
+        <h4 class="card-title">Create User </h4>
 
     </div>
     <p><hr/></p>
@@ -19,16 +19,16 @@
             @csrf
             <div class="row" style="">
                 <div class="mb-1 row">
-                    <label class="col-sm-2 col-form-label" style="font-size: medium">Admin Name</label>
+                    <label class="col-sm-2 col-form-label" style="font-size: medium">Name</label>
                     <div class="col-sm-10">
-                    <input type="text" class="form-control" placeholder="Niamul Hasan" name="name">
+                    <input type="text" class="form-control" placeholder="Admin Name" name="name">
                 </div>
                 </div>
 
                 <div class="mb-1 row">
-                    <label class="col-sm-2 col-form-label" style="font-size: medium">Admin Username</label>
+                    <label class="col-sm-2 col-form-label" style="font-size: medium">Username</label>
                     <div class="col-sm-10">
-                    <input type="text" class="form-control" placeholder="niamul_hasan" name="username" required>
+                    <input type="text" class="form-control" placeholder="admin_name" name="username" required>
                 </div>
                 </div>
 
@@ -37,6 +37,13 @@
                     <div class="col-sm-10">
                     <input type="email" class="form-control" placeholder="username@gmail.com" name="email">
                 </div>
+                </div>
+
+                <div class="mb-1 row">
+                    <label class="col-sm-2 col-form-label" style="font-size: medium">Phone</label>
+                    <div class="col-sm-10">
+                        <input type="number" class="form-control" placeholder="0171111111" name="phone">
+                    </div>
                 </div>
 
                 <div class="mb-1 row">

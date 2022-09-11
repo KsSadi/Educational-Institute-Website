@@ -31,9 +31,10 @@
 
 
                 @foreach ($permissions as $item)
+
                     <div class="col-sm-2">
                     </div>
-                    <div class="col-sm-10">
+                    <div class="col-sm-10" style="margin-left: 50px">
                     <div class="form-check form-check-success">
                         <input type="checkbox" {{ $role->hasPermissionTo($item->name) ? 'checked' : '' }} class="form-check-input" style="padding: 5px;" value="{{ $item->name }}" name="permissions[]" id="permission-{{ $loop->index }}">
 
@@ -47,7 +48,7 @@
                 <div class="sm:ml-20 sm:pl-5 mt-5">
                     <input type="submit" class="btn btn-gradient-primary" value="Update" />
                 </div>
-        </div>
+        </form>
 
         </form>
     </div>

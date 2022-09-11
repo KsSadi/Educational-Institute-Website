@@ -16,12 +16,9 @@ class RolePermissionSeeder extends Seeder
     public function run()
     {
         //Create Roles
-        $roleGod = Role::create(['name' => 'god', 'guard_name' => 'admin']);
-        $roleAdmin = Role::create(['name' => 'admin', 'guard_name' => 'admin']);
-        $roleSubAdmin = Role::create(['name' => 'subAdmin', 'guard_name' => 'admin']);
-        $roleManager = Role::create(['name' => 'manager', 'guard_name' => 'admin']);
-        $roleSale = Role::create(['name' => 'sale', 'guard_name' => 'admin']);
-        $premiumUser = Role::create(['name' => 'premiumUser', 'guard_name' => 'web']);
+        $roleGod = Role::create(['name' => 'Admin', 'guard_name' => 'admin']);
+
+
 
         //Permissions
         $permissions = [
@@ -34,27 +31,29 @@ class RolePermissionSeeder extends Seeder
             'admin.delete',
             'admin.approve',
 
-            //permission name for users
-            'user.create',
-            'user.view',
-            'user.edit',
-            'user.delete',
-            'user.approve',
-
             //permissions names for role
             'role.create',
             'role.view',
             'role.edit',
             'role.delete',
             'role.approve',
-            'supplier.view',
-            'supplier.create',
+            //permissions names for setting
+            'global.setting',
+            'speech.view',
+            'notice.view',
+            'notice.create',
+            'notice.edit',
+            'notice.delete',
+            //permissions names for Slider
+            'slider.view',
+            'slider.create',
+            'slider.edit',
+            'slider.delete',
+
         ];
 
-        $permissions_users = [
-            'offer.view',
-            'transaction.view'
-        ];
+
+
 
         //Create and Assign Premission for admin
         for ($i = 0; $i < count($permissions); $i++) {
@@ -65,13 +64,5 @@ class RolePermissionSeeder extends Seeder
             $roleGod->givePermissionTo($permission);
         }
 
-        //Create and Assign Premission for users
-        for ($i = 0; $i < count($permissions_users); $i++) {
-            //Create Permission
-            $permission_users = Permission::create(['name' => $permissions_users[$i], 'guard_name' => 'web']);
-
-            //Assign Permission to a Role
-            $premiumUser->givePermissionTo($permission_users);
-        }
     }
 }

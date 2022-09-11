@@ -1,48 +1,59 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+
+
+@extends('backend.auth.main')
+
+@section('auth-title')
+    Reset Password
+@endsection
+
+@section('auth-content')
+
+
+    <div class="card mb-0">
+        <div class="card-body">
+            <a href="{{ route('dashboard') }}" class="brand-logo">
+                <img src="{{url('/img/logo.png')}}" width="50px" height="40px" alt="SUB"/>
+
+                <h2 class="brand-text text-primary ms-1" style="margin-top: 7px;">SUB CAS</h2>
             </a>
-        </x-slot>
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+            <h4 class="card-title mb-1">SUB Canteen Automation System</h4>
+            <p class="card-text mb-2">Enter your new password for Canteen Automation System</p>
+            @include('backend.layouts.partials.alerts')
+            <form method="POST" action="{{ route('dashboard.reset.password.submit') }}">
+                @csrf
+                <input type="hidden" name="token" value="{{request('token')}}">
 
-        <form method="POST" action="{{ route('password.update') }}">
-            @csrf
+                <div class="mb-1">
+                    <div class="d-flex justify-content-between">
+                        <label class="form-label" for="login-password">New Password</label>
 
-            <!-- Password Reset Token -->
-            <input type="hidden" name="token" value="{{ $request->route('token') }}">
+                    </div>
+                    <div class="input-group input-group-merge form-password-toggle">
 
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
+                        <input type="password" class="form-control form-control-merge" placeholder="Password" id="password" name="password"
+                               required autocomplete="password" />
+                        <span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
+                    </div>
+                </div>
+                <div class="mb-1">
+                    <div class="d-flex justify-content-between">
+                        <label class="form-label" for="login-password">Confirm Password</label>
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email', $request->email)" required autofocus />
-            </div>
+                    </div>
+                    <div class="input-group input-group-merge form-password-toggle">
 
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
+                        <input type="password" class="form-control form-control-merge" placeholder="Password" id="password" name="password_confirmation"
+                               required autocomplete="password_confirmation" />
+                        <span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
+                    </div>
+                </div>
+                <button class="btn btn-primary w-100" tabindex="4">Reset Password</button>
+            </form>
 
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required />
-            </div>
+        </div>
+    </div>
+    <!-- /Login basic -->
 
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
+@endsection
 
-                <x-input id="password_confirmation" class="block mt-1 w-full"
-                                    type="password"
-                                    name="password_confirmation" required />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <x-button>
-                    {{ __('Reset Password') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>

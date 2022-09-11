@@ -18,11 +18,12 @@ class AdminSeeder extends Seeder
         if (is_null(Admin::where('email', 'super@admin.com')->first())) {
             $admin = new Admin();
             $admin->name = "Super Admin";
-            $admin->email = "super@admin.com";
+            $admin->email = "admin@demo.com";
             $admin->username = "superadmin";
+            $admin->phone = "01741022832";
             $admin->password = Hash::make('superadmin');
             $admin->save();
-            $admin->assignRole('god');
+            $admin->assignRole('Admin');
         }
     }
 }

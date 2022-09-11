@@ -2,6 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Employee;
+use App\Models\Expenses;
+use App\Models\Purchase;
+use App\Models\PurchaseItem;
+use App\Models\Salary;
+use App\Models\Sale;
+use App\Models\SaleItem;
+use App\Models\sCategory;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,7 +36,6 @@ class DashboardController extends Controller
         else{
             $statData = [];
 
-            //return $courses;
             return view('backend.pages.dashboard.index', compact('statData'));
         }
         //return view('backend.pages.dashboard.index');

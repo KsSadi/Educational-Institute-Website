@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\GlobalSetting;
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +26,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Schema::defaultStringLength(191);
+        if(Schema::hasTable('global_settings')){
+
+            if(GlobalSetting::first()==null)
+            {
+                $setting=new GlobalSetting();
+                $setting->save();
+            }
+            View::share('global', GlobalSetting::first());
+        }
+
     }
 }
