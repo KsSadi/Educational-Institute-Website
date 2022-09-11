@@ -99,7 +99,12 @@ class NoticeController extends Controller
      */
     public function edit($id)
     {
-        //
+        if (is_null($this->user) || !$this->user->can('notice.edit')) {
+            abort(403, 'Unauthorized Access!');
+        }
+        $notice = Notice::find($id);
+        return view('backend.pages.notices.edit', compact('notice'));
+
     }
 
     /**
@@ -112,6 +117,18 @@ class NoticeController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $notice = Notice::find($id);
+        $notice->title = $request->title;
+        $notice->description = $request->description;
+        $notice->date = $request->date;
+        if($request->hasFile('document')){
+
+            $notice->notice_file = $request->document->store('notice','public');
+        }
+        $notice->save();
+        session()->flash('success', 'Notice has been Updated!!');
+        return back();
+
     }
 
     /**

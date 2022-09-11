@@ -22,7 +22,7 @@
 
                         <ul>
                             <a href="" style="padding: 5px">
-                                <button class="btn btn-info btn-sm"><strong style="font-size: medium">Online Admission</strong></button>
+                                <button class="btn btn-danger btn-sm"><strong style="font-size: medium">Online Admission</strong></button>
                             </a>
                         </ul>
                     </div>
