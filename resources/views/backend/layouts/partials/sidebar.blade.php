@@ -49,7 +49,7 @@
             {{--Admin Start User--}}
 
 
-            @if (Auth::guard('admin')->user()->can('role.view') ||Auth::guard('admin')->user()->can('admin.view') || Auth::guard('admin')->user()->can('global.setting'))
+            @if (Auth::guard('admin')->user()->can('role.view') ||Auth::guard('admin')->user()->can('admin.view') || Auth::guard('admin')->user()->can('global.setting') ||Auth::guard('admin')->user()->can('translate.view'))
                 <div class="divider divider-info divider-start">
                     <div class="divider-text"> Admin Panel </div>
                 </div>
@@ -79,6 +79,13 @@
                         <li class=" nav-item  @if (Request::is('dashboard/settings*'))
                         nav-item active @endif">
                             <a class="d-flex align-items-center" href="{{ route('dashboard.settings.index') }}"><i data-feather='settings'></i><span class="menu-title text-truncate" data-i18n="Datatable">Global Setting</span></a>
+                        </li>
+                    @endif
+                    @if (Auth::guard('admin')->user()->can('translate.view'))
+
+                        <li class=" nav-item  @if (Request::is('dashboard/translates*'))
+                        nav-item active @endif">
+                            <a class="d-flex align-items-center" href="{{ route('dashboard.translates.index') }}"><i data-feather='image'></i><span class="menu-title text-truncate" data-i18n="Datatable">Translate</span></a>
                         </li>
                     @endif
             @endif

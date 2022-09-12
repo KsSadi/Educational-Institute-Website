@@ -43,6 +43,7 @@ Route::group(['prefix' => 'dashboard'], function () {
     Route::resource('notices', 'App\Http\Controllers\Admin\NoticeController', ['names' => 'dashboard.notices']);
     Route::resource('speeches', 'App\Http\Controllers\Admin\SpeechController', ['names' => 'dashboard.speeches']);
     Route::resource('sliders', 'App\Http\Controllers\Admin\SliderController', ['names' => 'dashboard.sliders']);
+    Route::resource('translates', 'App\Http\Controllers\Admin\TranslateController', ['names' => 'dashboard.translates']);
 
 
     Route::get('/login', 'App\Http\Controllers\AdminAuth\AuthenticatedSessionController@showLoginForm')->name('dashboard.login');

@@ -15,6 +15,7 @@ use App\Models\SaleItem;
 use App\Models\SaleUnit;
 use App\Models\sCategory;
 use App\Models\Speech;
+use App\Models\Translate;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -68,6 +69,10 @@ class AllSeeder extends Seeder
             'description' => 'Welcome to our school',
             'notice_file' => 'notice/cqfcPQvvll1HngbpgC8akjA5bV9WCgGw4aXOv4PN.pdf',
             'date' => '2022-10-16',
+        ]);
+        Translate::create([
+            'about_us' => 'About Us',
+
         ]);
 
     }

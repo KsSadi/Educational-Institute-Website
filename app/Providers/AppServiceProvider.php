@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\GlobalSetting;
+use App\Models\Translate;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -35,6 +36,15 @@ class AppServiceProvider extends ServiceProvider
                 $setting->save();
             }
             View::share('global', GlobalSetting::first());
+        }
+        if(Schema::hasTable('translates')){
+
+            if(Translate::first()==null)
+            {
+                $setting=new GlobalSetting();
+                $setting->save();
+            }
+            View::share('translate', Translate::first());
         }
 
     }

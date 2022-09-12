@@ -40,6 +40,8 @@ class RolePermissionSeeder extends Seeder
             //permissions names for setting
             'global.setting',
             'speech.view',
+            'translate.view',
+            //permissions names for Notice
             'notice.view',
             'notice.create',
             'notice.edit',
@@ -49,6 +51,7 @@ class RolePermissionSeeder extends Seeder
             'slider.create',
             'slider.edit',
             'slider.delete',
+
 
         ];
 
